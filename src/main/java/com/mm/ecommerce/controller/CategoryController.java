@@ -23,7 +23,6 @@ import com.mm.ecommerce.services.CategoryService;
 
 @RestController
 @RequestMapping("/api/v1/categories")
-@PreAuthorize("hasRole('ADMIN')")
 public class CategoryController {
     
     @Autowired
@@ -31,6 +30,7 @@ public class CategoryController {
     
 
     ///Create Category
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/new-category")
     public ResponseEntity<CategoryDto> createCategory(@Valid @RequestBody CategoryDto categoryDto)
     {

@@ -43,6 +43,7 @@ public class BookServiceImpl implements BookService{
         Book book = modelMapper.map(bookDto, Book.class);
 
         book.setDate(new Date());
+        book.setImageName("default.jpg");
 
         //save book
         Book savedBook = bookRepository.save(book);
@@ -58,7 +59,7 @@ public class BookServiceImpl implements BookService{
         Product product = new Product();
         product.setSeller(seller);
         product.setCategory(category);
-        product.setImageName("default.png");
+        product.setImageName("default.jpg");
         //product.setDate(bookDto.getDate());
         product.setDate(book.getDate());
         product.setPrice(bookDto.getPrice());

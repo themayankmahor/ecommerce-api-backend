@@ -1,7 +1,13 @@
 package com.mm.ecommerce.payloads;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,6 +34,22 @@ public class UserDto {
     @Size(message = "Email address is not valid")
     private String email;
 
+    @NotEmpty
+	@Size(min = 3, max = 10, message = "Password must be min of 3 chars and max of 10 chars !!")
     private String password;
+
+    private Set<RoleDto> roles = new HashSet<>();
+
+    @JsonIgnore
+	public String getPassword()
+	{
+		return password;
+	}
+	
+	@JsonProperty
+	public void setPassword(String password)
+	{
+		this.password = password;
+	}
 
 }

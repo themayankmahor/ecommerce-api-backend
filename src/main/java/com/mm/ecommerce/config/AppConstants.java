@@ -7,6 +7,8 @@ public class AppConstants {
     public static final String PAGE_SIZE = "5";
     public static final String SORT_BY = "productId";
     public static final String SORT_DIR  = "asc";
+    public static final String SORT_BY_CATEGORYID  = "0";
+    public static final String SORT_BY_SELLERID  = "0";
 
 
     ///Roles

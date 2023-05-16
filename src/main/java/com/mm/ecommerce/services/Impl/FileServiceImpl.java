@@ -9,10 +9,12 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.UUID;
 
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.mm.ecommerce.services.FileService;
 
+@Service
 public class FileServiceImpl implements FileService{
 
     @Override
@@ -52,7 +54,6 @@ public class FileServiceImpl implements FileService{
 
         //db login to return input stream
         return is;
-
     }
     
     

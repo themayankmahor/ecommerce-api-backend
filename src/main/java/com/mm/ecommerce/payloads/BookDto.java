@@ -13,6 +13,8 @@ public class BookDto {
 
     private String authorName;
 
+    private String imageName;
+
     private long price;
 
     private String genres;
